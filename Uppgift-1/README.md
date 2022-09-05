@@ -72,6 +72,7 @@ Om vi tittar på vad den `ArrayList<String>` som ska returnerar innehåller är 
     "8505221898 Kalle Karlsson"
     "6911258876 Pelle Persson"
     "7505121231 Lotta Larsson"
+
 Notera att hakparenteser och komma mellan objekten skrivs ut automatiskt när vi skriver ut en `ArrayList`.
 
     public boolean createCustomer(String name, String surname, String pNo)
@@ -97,7 +98,7 @@ För att testprogrammet ska fungera så behöver du formatera saldo och procente
 
 Notera att formateringen är beroende av vilket språk som används av JVM, jag förväntar mig svensk formatering så om du använder ett annat språk så kan du i koden byta till svenska:
 
-String balanceStr = NumberFormat.getCurrencyInstance(new Locale("sv","SE")).format(balance);
+    String balanceStr = NumberFormat.getCurrencyInstance(new Locale("sv","SE")).format(balance);
 
 På liknande sätt formaterar vi räntan, men med `getPercentInstance` istället för `getCurrencyInstance`. För att få med decimalen så får vi göra på följande sätt:
 
@@ -121,7 +122,7 @@ Alternativt returneras –1 om inget konto skapades (kunden fanns inte)
 
     public String getAccount(String pNo, int accountId)
 
-Returnerar en String som innehåller presentation av kontot med kontonummer accountId som tillhör kunden med personnummer pNo
+Returnerar en String som innehåller presentation av kontot med kontonummer accountId som tillhör kunden med personnummer `pNo`.
 Det som returneras ska vara: kontonummer saldo kr kontotyp räntesats %
 Returnerar null om konto inte finns eller om kontot inte tillhör kunden
 
@@ -154,6 +155,7 @@ Tar bort en kund med personnummer pNo ur banken, alla kundens eventuella konton 
 Returnerar null om ingen kund togs bort
 Listan som returneras ska innehålla information om kund på första platsen i ArrayList (personnummer förnamn efternamn) sedan följer de konton som togs bort (kontonummer saldo kr kontotyp ränta kr). Notera att ränta i kronor presenteras istället för räntesatsen när ett konto tas bort. Ränta i kronor beräknas som saldo*räntesats/100 (ränta behöver enbart beräknas vid borttagning av konton då banken i denna version inte stödjer årsskiften).
 Det som returneras ska se ut som följer:
+
     [7505121231 Lotta Larsson, 1004 0,00 kr Sparkonto 0,00 kr, 1005 700,00 kr Sparkonto 8,40 kr]
     index 0	index 1	index 2
     "7505121231 Lotta Larsson"
@@ -174,17 +176,17 @@ Alla filer innehåller ditt förnamn, efternamn och ditt användarnamn.
 För väl godkänt (VG) på denna uppgift krävs dessutom att:
 Lösningen är genomtänkt och väl objektorienterad.
 Du har bland annat tänkt igenom inkapsling, ansvarsområden och relationer mellan klasserna.
-Inga listor med objekt returneras eftersom den som hämtar listan kan förändra innehållet i den vilket förlorar inkapsling. 
+Inga listor med objekt returneras eftersom den som hämtar listan kan förändra innehållet i den vilket förlorar inkapsling.
 Du använder lämpliga hjälpmetoder (privata metoder) för att återanvända kod.
 Flyttal ska lagras exakt, använd förslagsvis BigDecimal.
 Du skriver en utförlig rapport där du motiverar dina val och reflekterar över din lösning så det framgår att du har en god förståelse av det du har gjort.
-Din källkoden följer kodningsregler och standard för dokumentation och kommentering. 
+Din källkoden följer kodningsregler och standard för dokumentation och kommentering.
 
 ## Inlämning
 
 Vi vill som tidigare nämnts i denna kurs att du lägger de klasser du skapat i ett paket (package) som heter qwerty0 (byt ut qwerty0 till ditt unika ltu-användarnamn). Läs mer på sidan: Package.
 
-Innan inlämning så kontrollerar du att din kod är kommenterad och är lätt att läsa. Kontrollera även att dina klasser fungerar med TestBank.java. 
+Innan inlämning så kontrollerar du att din kod är kommenterad och är lätt att läsa. Kontrollera även att dina klasser fungerar med TestBank.java.
 
 Glöm inte att både namn och ltu-id måste finnas med i ALLA filer som lämnas in, lägg dem längst upp i en klasskommentar. Läs mer på sidan: Kodningsregler.
 
