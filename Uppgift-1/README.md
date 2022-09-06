@@ -27,7 +27,6 @@ Börja med att implementera klassen `Account` som ska hantera följande informat
 - räntesats
 - kontonummer
 - kontotyp
-- kontonummer.
 
 Notera att man i ett verkligt banksystem aldrig får lagra belopp eller räntesats som ett flyttal då man förr eller senare kommer att få avrundningsfel beroende på att man inte kan lagra alla decimaltal i datatyperna float eller double. Man kan istället använda en klass som heter BigDecimal. För betyget G kommer det att vara tillåtet att använda float eller double i uppgifterna medan man om man eftersträvar VG ska använda BigDecimal (eller alternativ lösning där flyttal sparas exakt). Läs gärna [mer](https://javarevisited.blogspot.com/2012/02/java-mistake-1-using-float-and-double.html).
 
@@ -68,10 +67,9 @@ Testklassen förutsätter att ordningen på kunder är samma som den ordning som
 
 Om vi tittar på vad den `ArrayList<String>` som ska returnerar innehåller är det:
 
-    index 0	index 1	index 2
-    "8505221898 Kalle Karlsson"
-    "6911258876 Pelle Persson"
-    "7505121231 Lotta Larsson"
+| index 0                     | index 1                   | index 2                   |
+|-----------------------------|---------------------------|---------------------------|
+| "8505221898 Kalle Karlsson" |"6911258876 Pelle Persson" | "7505121231 Lotta Larsson"|
 
 Notera att hakparenteser och komma mellan objekten skrivs ut automatiskt när vi skriver ut en `ArrayList`.
 
@@ -89,8 +87,10 @@ Första platsen i listan är reserverad för kundens personnummer och namn sedan
 Exempel på hur det som returneras ska se ut:
 
     [7505121231 Lotta Larsson, 1004 0,00 kr Sparkonto 1,2 %, 1005 0,00 kr Sparkonto 1,2 %]
-    index 0	index 1	index 2
-    "7505121231 Lotta Larsson"	"1004 0,00 kr Sparkonto 1,2 %"	"1005 0,00 kr Sparkonto 1,2 %"
+
+| index 0                    | index 1                        | index 2                        |
+|----------------------------|--------------------------------|--------------------------------|
+| "7505121231 Lotta Larsson" | "1004 0,00 kr Sparkonto 1,2 %" | "1005 0,00 kr Sparkonto 1,2 %" |
 
 För att testprogrammet ska fungera så behöver du formatera saldo och procenten när man hämtar information om kontot, notera att nedan kod även lägger till valutan "kr". För att formatera belopp kan vi använda:
 
@@ -157,11 +157,10 @@ Listan som returneras ska innehålla information om kund på första platsen i A
 Det som returneras ska se ut som följer:
 
     [7505121231 Lotta Larsson, 1004 0,00 kr Sparkonto 0,00 kr, 1005 700,00 kr Sparkonto 8,40 kr]
-    index 0	index 1	index 2
-    "7505121231 Lotta Larsson"
-    "1004 0,00 kr Sparkonto 0,00 kr"
-    "1005 700,00 kr Sparkonto 8,40 kr"
 
+| index 0                    | index 1                          | index 2                            |
+|----------------------------|----------------------------------|------------------------------------|
+| "7505121231 Lotta Larsson" | "1004 0,00 kr Sparkonto 0,00 kr" | "1005 700,00 kr Sparkonto 8,40 kr" |
 ## Betyg
 
 För godkänt (G) på denna inlämningsuppgift krävs att:

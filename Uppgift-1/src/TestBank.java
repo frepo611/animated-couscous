@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-import qwerty1.BankLogic;
+import efiovo1.BankLogic;
 
 /** 
  * D0018D, Lab 1: Testar att klasserna Account, Customer and BankLogic  
