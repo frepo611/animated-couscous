@@ -146,13 +146,16 @@ Returnerar true om det gick bra annars false
 Avslutar ett konto med kontonummer accountId som tillhör kunden med personnummer pNo. När man avslutar ett konto skall räntan beräknas som saldo*räntesats/100.
 OBS! Enda gången ränta läggs på är när kontot tas bort eftersom årsskiften inte behöver hanteras i denna version av systemet.
 Presentation av kontot ska returneras men med räntan i kronor istället för räntesatsen (kontonummer saldo kr kontotyp ränta kr)
-Returnerar null om inget konto togs bort
-Det som returneras ska se ut som följer: 1001 1 000,00 kr Sparkonto 12,00 kr
+Returnerar null om inget konto togs bort.
+Det som returneras ska se ut som följer:
+
+     1001 1 000,00 kr Sparkonto 12,00 kr
 
     public ArrayList<String> deleteCustomer(String pNo)
 
 Tar bort en kund med personnummer pNo ur banken, alla kundens eventuella konton tas också bort och resultatet returneras.
-Returnerar null om ingen kund togs bort
+Returnerar null om ingen kund togs bort.
+
 Listan som returneras ska innehålla information om kund på första platsen i ArrayList (personnummer förnamn efternamn) sedan följer de konton som togs bort (kontonummer saldo kr kontotyp ränta kr). Notera att ränta i kronor presenteras istället för räntesatsen när ett konto tas bort. Ränta i kronor beräknas som saldo*räntesats/100 (ränta behöver enbart beräknas vid borttagning av konton då banken i denna version inte stödjer årsskiften).
 Det som returneras ska se ut som följer:
 

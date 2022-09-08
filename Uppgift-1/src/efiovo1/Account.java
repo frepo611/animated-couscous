@@ -60,4 +60,13 @@ public class Account {
         return String.format("%d %s %s %s", accountNumber, balanceStr, accountType, percentStr);
     }
 
+    public String closedAccountToString() {
+        
+        String balanceStr = NumberFormat.getCurrencyInstance().format(balance);
+        NumberFormat percentFormat = NumberFormat.getPercentInstance(new Locale("sv", "SE"));
+        percentFormat.setMaximumFractionDigits(1); // Anger att vi vill ha max 1 decimal
+        String interestStr = NumberFormat.getCurrencyInstance().format(interestRate * balance / 100);
+        
+        return String.format("%d %s %s %s", accountNumber, balanceStr, accountType, interestStr);
+    }
 }

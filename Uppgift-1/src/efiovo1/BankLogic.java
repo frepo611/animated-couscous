@@ -23,43 +23,71 @@ public class BankLogic {
     public ArrayList<String> getCustomer(String pNo) {
         ArrayList<String> customerAccountList = new ArrayList<>();
 
-        if (PersonNumbers.contains(pNo)) {
-            // find customer using pNo
-            for (Customer customer : customerList) {
-                if (customer.getpNo().equals(pNo)) {
-                    // write customer data
-                    customerAccountList.add(customer.toString());
-                    // write customer account data, copy account info from AccountList
-                    for (Account account : customer.getAccountList()) {
-                        customerAccountList.add(account.toString());
-                    }
-                    return customerAccountList;
-                }
+        if (customerExists(pNo)) {
+            // find customer using pNo, write customer data
+            customerAccountList.add(findCustomer(pNo).toString());
+            // write customer account data, copy account info from AccountList
+            for (Account account : findCustomer(pNo).getAccountList()) {
+                customerAccountList.add(account.toString());
             }
+            return customerAccountList;
         } else {
             return null;
         }
     }
 
     public boolean createCustomer(String name, String surname, String pNo) {
-
-        if (pNoIsNew(pNo)) {
+        // return false if the customer already exists
+        if (customerExists(pNo)) {
+            return false;
+        } else {
+            // add customer
             Customer customer = new Customer(name, surname, pNo);
             customerList.add(customer);
             return true;
-        } else {
-            return false;
         }
     }
 
-    private boolean pNoIsNew(String pNo) {
+    public ArrayList<String> deleteCustomer(String pNo) {
+        ArrayList<String> closedAccounts = null;
+        if (customerExists(pNo)) {
+            findCustomer(pNo).
+            //remove customer
+            customerList.remove(findCustomer(pNo));
+        }
+        return closedAccounts;
+    }
+
+    public String closeAccount(String pNo, int accountNumber) {
+        if (customerExists(pNo)) {
+            Customer customer = findCustomer(pNo);
+            Account account = customer.getAccount(accountNumber);
+            if (customer.accountExists(accountNumber)) {
+                return account.closedAccountToString();
+            } else {
+                return null;
+            }
+        }
+    }
+
+    private boolean customerExists(String pNo) {
         for (Customer customer : customerList) {
             // return if pNo is found
             if (customer.getpNo().equals(pNo)) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
+    }
+
+    private Customer findCustomer(String pNo) {
+        for (Customer customer : customerList) {
+            // return if pNo is found
+            if (customer.getpNo().equals(pNo)) {
+                return customer;
+            }
+        }
+        return null;
     }
 
 }
