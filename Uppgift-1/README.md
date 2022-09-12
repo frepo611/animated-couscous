@@ -46,8 +46,8 @@ Man ska kunna ändra kundens namn (personnummer ska inte kunna ändras) samt hä
 
 Hur du hanterar kopplingen mellan kund och konto är upp till dig. Det finns flera alternativ, alternativ 1 är det som rekommenderas och beskrivs nedan men man får använda sig av alternativ 2 eller något tredje alternativ om man anser sig ha kunskap att genomföra det alternativet på ett korrekt sätt. För VG på uppgiften krävs att man har funderat lite extra på denna del och motiverar sitt val i rapporten.
 
-Man lägger in lista med konton i klassen `Customer`. `Customer`-klassen håller själv reda på sina konton och är den som ska utföra operationer på sina konton.  
-Man har listan med konton i klassen `BankLogic`. Du måste då på något sätt koppla ihop ett konto med en kund.
+1. Man lägger in lista med konton i klassen `Customer`. `Customer`-klassen håller själv reda på sina konton och är den som ska utföra operationer på sina konton.  
+2. Man har listan med konton i klassen `BankLogic`. Du måste då på något sätt koppla ihop ett konto med en kund.
 
 ### BankLogic
 
