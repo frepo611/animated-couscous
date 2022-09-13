@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class BankLogic {
 
-    private ArrayList<Customer> customerList;
+    private CustomerRegister customerList;
 
     public BankLogic() {
-        this.customerList = new ArrayList<>();
+        this.customerList = new H<>();
     }
 
     public ArrayList<String> getAllCustomers() {
@@ -37,37 +37,29 @@ public class BankLogic {
     }
 
     public boolean createCustomer(String name, String surname, String pNo) {
-        // return false if the customer already exists
-        if (customerExists(pNo)) {
-            return false;
-        } else {
-            // add customer
-            Customer customer = new Customer(name, surname, pNo);
-            customerList.add(customer);
-            return true;
-        }
+        
+        return true;
     }
 
     public ArrayList<String> deleteCustomer(String pNo) {
         ArrayList<String> closedAccounts = null;
-        if (customerExists(pNo)) {
-            findCustomer(pNo).
-            //remove customer
-            customerList.remove(findCustomer(pNo));
-        }
+
         return closedAccounts;
     }
 
     public String closeAccount(String pNo, int accountNumber) {
-        if (customerExists(pNo)) {
-            Customer customer = findCustomer(pNo);
-            Account account = customer.getAccount(accountNumber);
-            if (customer.accountExists(accountNumber)) {
-                return account.closedAccountToString();
-            } else {
-                return null;
-            }
-        }
+
+        return null;
+    }
+
+    private boolean customerExists(String pNo) {
+
+        return false;
+    }
+
+    private Customer findCustomer(String pNo) {
+
+        return null;
     }
 
     private boolean customerExists(String pNo) {

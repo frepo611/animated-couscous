@@ -6,10 +6,10 @@ public class Customer {
 
     private String name;
     private String surname;
-    private String pNo;
+    private PersonalNumber pNo;
     private ArrayList<Account> accountList;
 
-    public Customer(String name, String surname, String pNo) {
+    public Customer(String name, String surname, PersonalNumber pNo) {
         this.name = name;
         this.surname = surname;
         this.pNo = pNo;
@@ -70,12 +70,8 @@ public class Customer {
         this.surname = surname;
     }
 
-    public String getpNo() {
+    public PersonalNumber getpNo() {
         return pNo;
-    }
-
-    public void setpNo(String pNo) {
-        this.pNo = pNo;
     }
 
     public ArrayList<Account> getAccountList() {
