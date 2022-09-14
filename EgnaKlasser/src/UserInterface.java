@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import javax.swing.text.html.HTMLDocument.HTMLReader.SpecialAction;
 
 public class UserInterface {
     private Scanner scanner;
@@ -15,7 +14,7 @@ public class UserInterface {
         while (true) {
             System.out.println("1. Hypothenuse");
             System.out.println("2. Volume of sphere");
-            System.out.println("3. Real square roots");
+            System.out.println("3. Square roots");
             System.out.println("q. Quit");
             String input = scanner.nextLine();
 
@@ -37,7 +36,16 @@ public class UserInterface {
                     
                     break;
                 case "3":
-                System.out.print();
+                System.out.print("Enter quadratic coefficient: ");
+                double a = Double.valueOf(scanner.nextLine());
+                System.out.print("Enter linear coefficient: ");
+                double b = Double.valueOf(scanner.nextLine());
+                System.out.print("Enter constant: ");
+                double c = Double.valueOf(scanner.nextLine());
+                QuadraticEquation qEquation = new QuadraticEquation(a, b, c);
+                System.out.println(qEquation.solver());
+                    
+
                     
                     break;
                 case "q":
